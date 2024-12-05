@@ -1,10 +1,14 @@
 pipeline {
     agent any
 
+    tools {
+        msbuild 'MSBuild'
+    }
+
     stages {
         stage('Checkout') {
             steps {
-                git url: 'add here your url', credentialsId: 'add credentialsId'
+                git url: 'https://github.com/mayfff/SP_task4.git', credentialsId: 'jenkinsid'
             }
         }
         
@@ -12,7 +16,7 @@ pipeline {
             steps {
                 // Крок для збірки проекту з Visual Studio
                 // Встановіть правильні шляхи до рішення/проекту та параметри MSBuild
-                bat '"path to MSBuild" test_repos.sln /t:Build /p:Configuration=Release'
+                bat 'msbuild test_repos.sln /t:Build /p:Configuration=Release'
             }
         }
 
@@ -27,7 +31,7 @@ pipeline {
     post {
     always {
         // Publish test results using the junit step
-         // Specify the path to the XML test result files
+        junit 'test_report.xml'
     }
 }
 }
