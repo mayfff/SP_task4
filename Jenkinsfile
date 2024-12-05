@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/mayfff/SP_task4.git', credentialsId: 'jenkins_github', branch: '*/main'
+                git url: 'https://github.com/mayfff/SP_task4.git', credentialsId: 'jenkins_github', branch: 'main'
             }
         }
         
