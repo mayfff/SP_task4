@@ -38,7 +38,7 @@ void strcopy(char* fStr, char* sStr, size_t until)
         fStr[i] = sStr[i];
         if (sStr[i] == '\0') break;
     }
-    fStr[until - 1] = '\0'; // Захист від переповнення
+    fStr[until - 1] = '\0';
 }
 
 int32_t strcmpp(const char* fStr, const char* sStr)
