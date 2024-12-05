@@ -8,7 +8,9 @@
 #include "sort.h"
 #define STRING_MAX 512ull
 
-const int32_t get_str(const char const* msg, char* str, const int32_t limit)
+const size_t strlenn(const char* str);
+
+const int32_t get_str(const char* msg, char* str, const int32_t limit)
 {
     printf("%s", msg);
     if (fgets(str, limit, stdin) == NULL) return -1;
@@ -36,7 +38,7 @@ void strcopy(char* fStr, char* sStr, size_t until)
         fStr[i] = sStr[i];
         if (sStr[i] == '\0') break;
     }
-    fStr[until - 1] = '\0'; 
+    fStr[until - 1] = '\0'; // Захист від переповнення
 }
 
 int32_t strcmpp(const char* fStr, const char* sStr)

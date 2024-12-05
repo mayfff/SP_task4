@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GtaTestDurations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Executable>D:\Diploma\test_repos\x64\Debug\test_repos.exe</Executable>
+  <Executable>D:\Danylo Zakrevskyi\SP-coursework\SP_task4\x64\Debug\test_repos.exe</Executable>
   <TestDurations>
     <TestDuration Test="StringProcessorTest.GetString" Duration="1" />
     <TestDuration Test="StringProcessorTest.IsValidString" Duration="1" />
